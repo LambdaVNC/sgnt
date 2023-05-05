@@ -10,6 +10,7 @@
     "community",
     "editor"
   ],
+  "engines": {"node": "^12.21.0"},
   "author": "lambda",
   "license": "ISC",
   "dependencies": {
