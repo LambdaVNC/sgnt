@@ -4,7 +4,6 @@
   "description": "This app is useful to manage your community",
   "main": "app.js",
   "scripts": {
-    "build": "node app.js",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
