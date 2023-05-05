@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "app.js",
+        "use": "node@18.12.1"
+      }
+    ],
+    "build": {
+      "env": {
+        "CI": "true"
+      },
+      "command": "npm install"
+    }
+  }
+  

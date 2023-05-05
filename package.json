@@ -4,6 +4,7 @@
   "description": "This app is useful to manage your community",
   "main": "app.js",
   "scripts": {
+    "build": "node app.js",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
@@ -12,7 +13,7 @@
     "editor"
   ],
   "engines": {
-    "node": "v18.12.1"
+    "node": "18.12.1"
   },
   "author": "lambda",
   "license": "ISC",
