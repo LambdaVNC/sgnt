@@ -1,0 +1,31 @@
+<title>SGNT - Yayında !</title>
+
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Yayında !</h1>
+    <a href="mailto:bltycxkk@gmail.com" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i
+        class="fas fa-hand-point-right fa-sm text-white-100"></i> Sistem ile alakalı hataları bildirin... (Bug
+      Report)</a>
+  </div>
+
+  <!-- Divider -->
+  <hr>
+
+  <!-- Success and Error Messages -->
+  <% if (locals.validation_errors !==undefined ||locals.success_messages !==undefined) { %>
+    <%- include('./partials/message.ejs') %>
+      <% } %>
+
+      <!-- Act Card -->
+      <% if  (act == undefined) { %>
+        <strong class="d-flex justify-content-center"> Henüz bir etkinliğimiz yok ancak beklemede kalın, hazır olduğumuzda sizleri haberdar edeceğiz...</strong>
+        <% } else if( user.role == "user") { %>
+          <%- include('./partials/user_act_card.ejs') %>
+          <% } else if (user.role == "admin"){ %>
+            <%- include('./partials/admin_act_card.ejs') %>
+        <% } %>
+     
+
+
+</div>

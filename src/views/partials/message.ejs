@@ -1,0 +1,29 @@
+<% locals.validation_errors.forEach(error=> { %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong><i class="fas fa-exclamation"></i> <%- error.msg %></strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <% }) %>
+
+
+        <% locals.login_error.forEach(error=> { %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong><%- error %></strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <% }) %>
+
+
+
+                <% locals.success_messages.forEach(success=> { %>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong><i class="fas fa-check"></i> <%- success.msg %></strong>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <% }) %>

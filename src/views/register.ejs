@@ -1,0 +1,73 @@
+
+<title>SGNT - Üye Ol</title>
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <img style="max-height: 90px;" src="/home_page/assets/img/main-logo.png" onclick="window.location.href='/'" alt="">
+                            <h1 class="h4 text-gray-900 mb-4">Üye Ol!</h1>
+                            <p class="bg-primary fw-bolder fst-italic text-white rounded p-2">DİKKAT!: Bilgilerinizi doğru girmelisiniz. Yanlış girdiğiniz takdirde doğrulamaları geçemezsiniz.</p>
+                            <hr>
+                            <% if (locals.validation_errors !== undefined) { %>
+                             <%- include('./partials/message.ejs') %>
+                            <% } %>
+                        </div>
+                        <form class="user" method="post" action="/register">
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" name="firstName" value="<%= typeof locals.firstName == "undefined" ? "" : locals.firstName   %>" class="form-control form-control-user" id="exampleFirstName"
+                                        placeholder="İsim">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" name="lastName" value="<%= typeof locals.lastName == "undefined" ? "" : locals.lastName   %>" class="form-control form-control-user" id="exampleLastName"
+                                        placeholder="Soyisim">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="email" name="email" value="<%= typeof locals.email == "undefined" ? "" : locals.email   %>" class="form-control form-control-user" id="exampleLastName"
+                                        placeholder="Email">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="tel" name="phone" value="<%= typeof locals.phone == "undefined" ? "" : locals.phone   %>" class="form-control form-control-user" id="exampleLastName"
+                                        placeholder="Telefon numarası">
+                                </div>
+                            </div>
+                            <!-- <div class="form-group">
+                                <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail"
+                                    placeholder="Email">
+                            </div> -->
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="password" name="password" class="form-control form-control-user"
+                                        id="exampleInputPassword" placeholder="Şifre">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="password" name="repassword" class="form-control form-control-user"
+                                        id="exampleRepeatPassword" placeholder="Şifrenizi tekrar girin ">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-user btn-block">
+                                Kayıt Ol
+                            </button>
+                        </form>
+                        <hr>
+                        <div class="text-center">
+                            <a class="small" href="/forgot-password">Şifreni mi unuttun?</a>
+                        </div>
+                        <div class="text-center">
+                            <a class="small" href="/login">Zaten bir hesabın var mı? Giriş Yap!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

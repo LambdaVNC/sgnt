@@ -1,0 +1,73 @@
+<title>SGNT - Tüm Katılımcılar</title>
+
+
+<!-- --------- All Participants -------- -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Tüm Katılımcılar</h1>
+        <a href="mailto:bltycxkk@gmail.com" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i
+                class="fas fa-hand-point-right fa-sm text-white-100"></i> Sistem ile alakalı hataları bildirin... (Bug
+            Report)</a>
+    </div>
+
+    <hr>
+    <!-- All Participant options ( delete, all delete) -->
+    <div class="d-flex align-items-center justify-content-between">
+        <!-- Delete one participant from email -->
+        <form action="/super-admin/delete-one-participant" method="post">
+            <label for="silinenKisi">Katılımcılardan çıkarmak istediğin kişinin email'ini gir:</label>
+            <input id="silinenKisi" name="deleteOneParticipant" class="border border-warning rounded p-1 m-2"
+                type="email" class="form-control" placeholder="silinecekKisi@gmail.com">
+            <button type="submit" class="m-2 d-sm-inline-block btn btn-sm btn-warning shadow-sm"><i
+                    class="fas fa-user-slash fa-sm text-white-100"></i>
+                Katılımcıyı sil</button>
+        </form>
+        <!-- Delete All Participants button -->
+        <form action="/super-admin/delete-all-participants" method="get">
+            <a href="#confirm-delete-modal" class="ml-4 d-sm-inline-block btn btn-sm btn-danger shadow-sm" data-toggle="modal"
+                data-target="#confirm-delete-modal">
+                <i class="fas fa-users-slash fa-sm text-white-100"></i>
+                Tüm Katılımcıları Sil
+        </a>
+            <!--Delete Modal -->
+            <div class="modal fade" id="confirm-delete-modal" tabindex="-1" role="dialog"
+                aria-labelledby="confirm-delete-modal-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirm-modal-title">Tüm Katılımcıları Sil</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Tüm Katılımcıları Silmek istiyorsun. Emin misin?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">iptal</button>
+                            <button type="submit" class="btn btn-danger">Sil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <hr>
+
+    <% if (locals.validation_errors !==undefined || locals.success_messages !==undefined) { %>
+        <%- include('./partials/message') %>
+            <% } %>
+
+                <!-- All Users List Catds -->
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+
+                    <!-- Partial card -->
+                    <% if (allParticipants !== undefined) { %>
+                        <%- include('./partials/user_info_card') %>
+                            <% } %>
+
+                </div>
+
+</div>

@@ -1,0 +1,276 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <h1 class="logo"><a href="/"><img src="/home_page/assets/img/logo.png" alt="logo"></a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto active" href="#hero">Anasayfa</a></li>
+        <li><a class="nav-link scrollto" href="#acts">Etkinliklerimiz</a></li>
+        <li><a class="nav-link scrollto" href="#about">Hakkımızda</a></li>
+        <li><a class="nav-link scrollto ms-auto me-5" href="#contact">İletişim</a></li>
+        <li><button class="btn btn-outline-primary m-2" onclick="window.location.href='/login'">Giriş Yap</button></li>
+        <li><button type="button" class="btn btn-outline-primary m-2" onclick="window.location.href='/register'">Üye
+            Ol</button></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+    </nav><!-- .navbar -->
+
+  </div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+
+<section id="hero" class="d-flex align-items-center">
+  <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+    <div class="row justify-content-center">
+      <div class="col-xl-7 col-lg-9 text-center">
+        <h1>SOSYAL GENÇ NESİL TOPLULUĞU</h1>
+        <h2>Aktivite, Eğlence, Yemek, İçmek... Tam Bizlik Şeyler</h2>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="#about" class="btn-get-started scrollto">Hadi Başlayalım</a>
+    </div>
+
+    <div class="row icon-boxes justify-content-center">
+      <div id="acts" class="section-title">
+        <h2 id="acts">ETKİNLİKLERİMİZ</h2>
+      </div>
+
+      <div
+        class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 d-flex justify-content-center align-items-stretch mb-5 mb-lg-0"
+        data-aos="zoom-in" data-aos-delay="200">
+        <div class="icon-box">
+          <div class="icon d-flex justify-content-center"><img
+              src="/uploads/activity_image/<%= act.image == undefined ? "SGNT.jpg" : act.image%>" class="rounded
+            img-fluid" alt="act-image">
+          </div>
+          <h4 class="title p-3"><a href="">
+              <%= act.title %>
+            </a></h4>
+          <p class="description fs-5">
+            <%= act.description %>
+          </p>
+          <p class="description mt-3"> <i class="fas fa-clock"></i>
+            <strong> Tarih: <%= act.date %></strong>
+        </p>
+          <p class="description mt-2 mb-2" style="font-weight: bold;"> <i class="fas fa-location-arrow"></i>
+            <strong> Konum: <%= act.location %>
+          </p>
+          <p class="description mb-4" style="font-weight: bolder;"><i class="fas fa-wallet"></i>
+            <strong> Ücret: <%=act.price %> TL
+          </p>
+          <a href="/login" style="letter-spacing: 3px;" class="btn <%= act.price == 0 ? " disabled" : "" %> form-control
+            float-end btn-lg btn-success">KATIL</a>
+        </div>
+      </div>
+      <!-- 
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="500">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-fingerprint-line"></i></div>
+            <h4 class="title"><a href="">Nemo Enim</a></h4>
+            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+          </div>
+        </div> -->
+
+    </div>
+  </div>
+</section><!-- End Hero -->
+
+<main id="main">
+
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>HAKKIMIZDA</h2>
+        <p>"Genç olmak, daima doğruyu yapmak demek değildir. Ancak yanlış yaparsanız bile, yaşlandığınızda iyi bir
+          hikaye anlatabilirsiniz." - Jennifer Lawrence</p>
+      </div>
+
+      <div class="row content">
+        <div class="col-lg-6">
+          <p>
+            Üniversite içinde bir araya gelerek kar amacı gütmeden insanlarla eğlenmek için topluluğumuzu kurduk.
+            Siz de minimum ücretle kafa dağıtmak ve eğlenmek için bize katılabilirsiniz.
+          </p>
+          <ul>
+            <li><i class="ri-check-double-line"></i> Herkesi kucaklayan açık fikirli bir topluluk</li>
+            <li><i class="ri-check-double-line"></i> Sosyal medyada aktif ve etkileşimli bir topluluk</li>
+            <li><i class="ri-check-double-line"></i> Her ay düzenli ve eğlenceli etkinlikler</li>
+          </ul>
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0">
+          <p>
+            Merhaba arkadaşlar! Biz Sosyal Genç Nesil Topluluğu, bu üniversitenin kocaman ailesinin küçük bir
+            parçasıyız.
+            Kurucularımız da sizin gibi bu kampüsün bir parçası ve senin gibi öğrencileriz. Her ay, hep birlikte
+            yepyeni eğlenceli aktivitelerle dolu zaman geçireceğiz! Eğlenmek, yeni insanlar tanımak ve kendimize zaman
+            ayırmak için buradayız. Bizimle ilgili daha fazla bilgi almak için, <a
+              href="https://www.instagram.com/sosyalgencnesiltopluluk/">sosyal medya hesabımızı</a> takip
+            etmeyi unutmayın. Sen de bize katıl ve eğlenceli zamanlar geçirmenin tadını çıkar!
+          </p>
+          <a href="#acts" class="btn-learn-more scrollto">Bize katıl ♥♥♥</a>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
+
+  <!-- ======= Counts Section ======= -->
+  <section id="counts" class="counts section-bg">
+    <div class="container">
+
+      <div class="row justify-content-center">
+
+        <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <span data-purecounter-start="0" data-purecounter-end="421" data-purecounter-duration="2"
+              class="purecounter"></span>
+            <p>Pozitif Geri Dönüş</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="2"
+              class="purecounter"></span>
+            <p>Proje</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <span data-purecounter-start="0" data-purecounter-end="377" data-purecounter-duration="2"
+              class="purecounter"></span>
+            <p>Takipçi</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Counts Section -->
+
+  <!-- ======= About Video Section ======= -->
+  <section id="about-video" class="about-video">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-6 align-self-baseline" data-aos="fade-right" data-aos-delay="100">
+          <img src="/home_page/assets/img/about-video.jpg" class="img-fluid" alt="about-video">
+        </div>
+
+        <div class="col-lg-6 pt-3 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+          <h3>Bir topluluğun gücü, üyelerinin birbirlerine destek olmasıdır.</h3>
+          <p class="fst-italic">İlk etkinliğimizde katılımların ve isteklerin olması bizi çok heyecanlandırdı, birçok
+            üniversite ve başka toplulukların katılma isteğinde bulunduğu sıra
+            gecesi etkinliğimizde harika bir gece geçirdik ve katılımcıların geri
+            dönüşleri de bunu doğruluyor. Keyifli ve unutulmaz anlar yaşamak için sizleri de bir sonraki etkinliğimize
+            bekliyoruz!
+          </p>
+          <ul>
+            <li><i class="bx bx-check-double"></i>Transparan bir iletişim politikası benimsiyoruz ve tüm konuları
+              açıkça paylaşıyoruz.</li>
+            <li><i class="bx bx-check-double"></i> Kendimizi sürekli geliştirerek, hatalarımızı düzeltmek için
+              çalışıyoruz.</li>
+            <li><i class="bx bx-check-double"></i> Herhangi bir sorun yaşadığınızda size en kısa sürede geri dönüş
+              yapacağız.</li>
+          </ul>
+          <p>
+            Her zaman daha iyisini yapmak için çalışıyoruz ve eksikliklerimizi tamamlayarak daha güçlü bir topluluk
+            olacağız.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End About Video Section -->
+
+
+
+  <!-- ======= Cta Section ======= -->
+  <section id="cta" class="cta">
+    <div class="container" data-aos="zoom-in">
+      <div class="text-center">
+        <h3>Önerilerinize Açığız</h3>
+        <p>Siz de topluluğumuzun gelişimine katkıda bulunmak isterseniz, bize önerilerinizi iletebilirsiniz. Biz,
+          eğlenceli ve özgün etkinliklerle herkesi buluşturmak için çalışıyoruz.</p>
+        <a class="cta-btn srcollto" href="#contact">Bize Fikrini İletebilirsin ▼</a>
+      </div>
+    </div>
+  </section><!-- End Cta Section -->
+
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container " data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>soru - öneri hattı</h2>
+        <p>Fikir ve önerilerinize daima açığız! Sorularınızı, önerilerinizi veya geri bildirimlerinizi
+          paylaşmak için aşağıdaki iletişim bilgilerimizi kullanabilirsiniz. Size en kısa sürede yanıt vereceğimizden
+          emin olabilirsiniz. Teşekkürler!</p>
+      </div>
+
+      <div id="padding" class="row mt-5 d-flex justify-content-center">
+
+        <div class="phone col-lg-3">
+          <i class="bi-instagram"></i>
+          <h4>Instagram:</h4>
+          <a href="https://www.instagram.com/sosyalgencnesiltopluluk/">sosyalgencnesiltopluluk</a>
+        </div>
+
+        <div class="email col-lg-3">
+          <i class="bi bi-envelope"></i>
+          <h4>Email:</h4>
+          <p>info@example.com</p>
+        </div>
+
+        <div class="phone col-lg-3">
+          <i class="bi bi-phone"></i>
+          <h4>Bizi Arayın:</h4>
+          <p>+1 5589 55488 55s</p>
+        </div>
+
+
+      </div>
+
+    </div>
+  </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+
+
+
+  <div class="container d-md-flex py-4">
+
+    <div class="me-md-auto text-center text-md-start">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Sosyal Genc Nesıl</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by/ <a style="color: yellowgreen; font-weight: bold; font-size: 15px;" href="#">@lambdavnc</a>
+      </div>
+    </div>
+    <div class="social-links text-center text-md-right pt-3 pt-md-0">
+      <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+      <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+    </div>
+  </div>
+</footer><!-- End Footer -->
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>

@@ -1,0 +1,103 @@
+<div class="row icon-boxes justify-content-center">
+    <div class="col-md-6 col-lg-5 d-flex align-items-stretch mb-5 mb-lg-0 card p-4" data-aos="zoom-in"
+        data-aos-delay="200">
+        <div class="icon-box">
+            <div class="mb-3 icon d-flex justify-content-center">
+                <img src="/uploads/activity_image/<%= act.image %>" class="rounded img-fluid" alt="act-image">
+            </div>
+            <h4 class="card-title">
+                <%= act.title %>
+            </h4>
+            <p class="description">
+                <%= act.description %>
+            </p>
+            <p class="description mt-2 mb-2"> <i class="fas fa-clock"></i>
+                <strong> Tarih: <%= act.date %></strong>
+            </p>
+            <p class="description mt-2 mb-2"> <i class="fas fa-location-arrow"></i>
+                <strong> Konum: <%= act.location %></strong>
+            </p>
+            <p class="description"><i class="fas fa-wallet"></i>
+                <strong>Ücret: <%= act.price %> TL</strong>
+            </p>
+            <button type="button" class="btn float-left btn-lg btn-success" data-toggle="modal"
+                data-target="#confirm-modal">KATIL</button>
+            <button type="button" class="btn float-right btn-lg btn-danger" data-toggle="modal"
+                data-target="#confirm-delete-modal">Etkinliği Sil</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Join Modal -->
+<div class="modal fade" id="confirm-modal" tabindex="-1" role="dialog" aria-labelledby="confirm-modal-title"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirm-modal-title">Etkinliğe Katıl</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Etkinliğimize katılımınızın
+                sağlanması için şu adımları izleyin <i class="fas fa-hand-point-down fa-sm text-white-100"></i>
+                "Katıl"
+                butonuna bastığınız
+                anda isteğiniz yöneticilere iletilir <i class="fas fa-check fa-sm text-white-100"></i>
+                <br>
+                <ul class="mt-3">
+                    <li>Açıklamayı <strong>"BURAK EKİNCİ 0541 541 5410 SGNT"</strong> şeklinde kendi bilgilerinize göre
+                        düzenleyin ve ödenecek tutarı <strong>
+                            <%= act.ibanOwner %>
+                        </strong> hesabına,<br>
+                        <!-- Copy clipboard -->
+                        <div class="input-group">
+                            <input id="foo" type="text" class="form-control" value="<%= act.iban %>"
+                                aria-label="iban copy" aria-describedby="basic-addon2">
+                            <button data-clipboard-target="#foo" class=" btn btn-info copy">Copy</button>
+                        </div> IBAN numarası ile <strong>
+                            <%= act.price %> TL
+                        </strong> gönderin.
+                    </li>
+                    <li>Yönetim ekibimiz ücret transferinizi doğruladığı anda katılımınız kesinleşir.
+                        <br>
+                        " Etkinlikler > Yayında! " kısmından katıl butonuna tekrar tıklayarak çıkan mesajdan
+                        doğrulayabilirsiniz.
+                    </li>
+                    <li>48 Saat içerisinde ücreti ödemenize rağmen katılımınız kabul görmedi ise <a
+                            href="<% process.env.WEBSITE_URL %>/#contact">buradan</a> bize ulaşabilirsiniz</li>
+                    <br>
+                    Teşekkürler ♥
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">iptal</button>
+                <a href="/super-admin/send-participant-request" class="btn btn-success">KATIL</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Delete Modal -->
+<div class="modal fade" id="confirm-delete-modal" tabindex="-1" role="dialog"
+    aria-labelledby="confirm-delete-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirm-modal-title">Etkinliği Sil</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Etkinliği Silmek istiyorsun. Emin misin?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">iptal</button>
+                <a href="/super-admin/delete-act" class="btn btn-danger">Sil</a>
+            </div>
+        </div>
+    </div>
+</div>

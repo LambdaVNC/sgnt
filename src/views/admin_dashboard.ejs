@@ -1,0 +1,111 @@
+<title>SGNT - Dashboard</title>
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        <a href="mailto:bltycxkk@gmail.com"
+            class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i
+                class="fas fa-hand-point-right fa-sm text-white-100"></i> Sistem ile alakalı hataları bildirin... (Bug Report)</a>
+    </div>
+
+    <!-- Divider -->
+    <hr>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Aktif Etkinlik ( <%= act.date %> )
+                            </div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                       <%= act.title %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- All Participants -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Katılımcı Sayısı</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= participantNumber %></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-handshake fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                Bekleyen İstekler</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= requestNumber %></div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-fire fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- --------- All Participants --------
+    <h2>Tüm Katılımcılar</h2>
+    <hr>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+
+        <div class="col mb-4">
+            <div class="card h-100 border-left-success">
+                <div class="card-body" style="color: black;">
+                    <h3 class="card-title">Burak Ekinci</h3>
+                    • SIRA GECESİ <br>
+                    • 0541 344 9825 <br>
+                    • bltycxkk@gmail.com <br>
+                    • Ödendi <i class="fas fa-check"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card h-100 border-left-success">
+                <div class="card-body" style="color: black;">
+                    <h3 class="card-title">Burak Ekinci</h3>
+                    • SIRA GECESİ <br>
+                    • 0541 344 9825 <br>
+                    • bltycxkk@gmail.com <br>
+                    • Ödendi <i class="fas fa-check"></i>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>

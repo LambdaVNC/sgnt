@@ -1,0 +1,79 @@
+<title>SGNT - Etkinlik Ekle</title>
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Etkinlik Ekle</h1>
+        <a href="mailto:bltycxkk@gmail.com" class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i
+                class="fas fa-hand-point-right fa-sm text-white-100"></i> Sistem ile alakalı hataları bildirin... (Bug
+            Report)</a>
+    </div>
+<hr>
+    <!-- ----- Content ---- -->
+    <% if (locals.validation_errors !== undefined || locals.success_messages !== undefined) { %>
+      <%- include('./partials/message.ejs') %>
+     <% } %>
+    
+   <!-- Form -->
+<form action="/super-admin/add-activity" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="event-name">Etkinlik Adı</label>
+      <input type="text" name="actName" class="form-control" id="event-name" placeholder="Etkinlik Adı">
+    </div>
+    <div class="form-group">
+      <label for="event-description">Etkinlik Açıklaması</label>
+      <textarea class="form-control" name="actDescription" id="event-description" rows="3" placeholder="Etkinlik Açıklaması"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="event-date">Etkinlik Tarihi</label>
+      <input type="text" name="actDate" class="form-control" id="event-date" placeholder="Etkinlik Tarihi ( 01-01-1999 ( 17:00 - 20:00 ))">
+    </div>
+    <div class="form-group">
+      <label for="event-date">Etkinlik Konum</label>
+      <input type="text" name="actLocation" class="form-control" id="event-location" placeholder="Etkinlik Konum">
+    </div>
+    <div class="form-group">
+      <label for="event-name">Etkinlik Ücreti</label>
+      <input type="text" name="actPrice" class="form-control" id="event-price" placeholder="Etkinlik Ücreti">
+    </div>
+    <div class="form-group">
+      <label for="event-price">Ücretin Gönderileceği Kişi Adı ve Bankası</label>
+      <input type="text" name="actIbanOwner" class="form-control" id="event-vault" placeholder="Burak Ekinci - Ziraat Bankası">
+    </div>
+    <div class="form-group">
+      <label for="event-price">Ücretin Gönderileceği IBAN Numarası</label>
+      <input type="text" name="actIban" class="form-control" id="event-vault" placeholder="TR00 0000 0000 0000 0000 0000 01">
+    </div>
+    <div class="form-group">
+      <label for="event-image">Etkinlik Görseli ( .jpg/.png )</label>
+      <input type="file" name="image" class="form-control-file" id="event-image">
+    </div>
+    <button type="button" class="btn btn-success btn-md mb-3" data-toggle="modal" data-target="#confirm-modal">Etkinliği Yayınla</button>
+    <!-- Modal -->
+    <div class="modal fade" id="confirm-modal" tabindex="-1" role="dialog" aria-labelledby="confirm-modal-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirm-modal-title">Etkinliği Yayınla</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Emin misiniz?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hayır</button>
+            <button type="submit" class="btn btn-success">Evet</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  
+  
+      
+
+</div>
