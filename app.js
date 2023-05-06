@@ -10,7 +10,7 @@ const path = require("path");
 // Database connections
 require("./src/config/db");
 
-// app.use configuration
+// app.use configurations
 require("./src/startup/use_config")(app);
 
 // route lines
