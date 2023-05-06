@@ -7,10 +7,10 @@ const app = express();
 const path = require("path");
 
 
-// Database connection
+// Database connections
 require("./src/config/db");
 
-// app.use configurations
+// app.use configuration
 require("./src/startup/use_config")(app);
 
 // route lines
