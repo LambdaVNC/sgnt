@@ -246,7 +246,7 @@ const register = async (req, res, next) => {
 
         req.flash("success_messages", [
           {
-            msg: "Email'inizi doğrulayın... bilgi: Bu email daha önce üye kayıt esnasında kullanılmış, ancak bilgi güvenliği için doğrulama yapacak kişiye giriş izni veriyoruz.",
+            msg: "Email'inizi doğrulayın... Bilgi: Gönderdiğimiz mail Spam Kutusu'na düşmüş olabilir ve bu email daha önce üye kayıt esnasında kullanılmış olup ancak bilgi güvenliği için doğrulama yapacak kişiye giriş izni veriyoruz.",
           },
         ]);
         res.redirect("/login");
@@ -340,7 +340,7 @@ const register = async (req, res, next) => {
           }
         );
         req.flash("success_messages", [
-          { msg: "e-mail doğrulaması için lütfen mail kutunuzu kontrol edin." },
+          { msg: "E-mail doğrulaması için lütfen mail kutunuzu kontrol edin. Not: Spam Kutusu'na düşmüş olabilir." },
         ]);
         res.redirect("/login");
       }
@@ -569,7 +569,7 @@ const forgotPassword = async (req, res, next) => {
   });
 
   req.flash("success_messages", [
-    { msg: "Şifrenizi sıfırlamanız için link verdiğiniz maile gönderildi" },
+    { msg: "Şifrenizi sıfırlamanız için link verdiğiniz maile gönderildi. Not: Gönderdiğimiz mail Spam Kutusu'na düşmüş olabilir." },
   ]);
   return res.redirect("/forgot-password");
 };
