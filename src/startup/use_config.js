@@ -4,7 +4,6 @@ const expressLayouts = require("express-ejs-layouts");
 const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
-const helmet = require("helmet");
 const MongoDBStore = require("connect-mongodb-session")(session);
 
 module.exports = function (app) {
