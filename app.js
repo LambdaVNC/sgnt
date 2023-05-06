@@ -16,7 +16,7 @@ require("./src/startup/use_config")(app);
 // route lines
 require("./src/startup/routes")(app);
 
-//Server ayaklandı
+//Server ayaklandıkkkk
 app.listen(process.env.PORT || 3000, (_) => {
   console.log(`The server is up from port ${process.env.PORT}`);
 });
