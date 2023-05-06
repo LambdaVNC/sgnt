@@ -4,13 +4,14 @@
   "description": "This app is useful to manage your community",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "test": "test", 
+    "start" : "node app.js",
+    "dev": "nodemon app.js"
   },
   "keywords": [
     "community",
     "editor"
   ],
-  "engines": {"node": "^12.21.0"},
   "author": "lambda",
   "license": "ISC",
   "dependencies": {
